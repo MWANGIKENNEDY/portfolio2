@@ -1,0 +1,204 @@
+:root{
+    --primary-color:rgb(255, 81, 0);
+    --white1:rgb(235, 235, 235);
+    --white2:rgb(219, 219, 219);
+    --white3:rgb(255, 240, 240);
+    --black1:rgb(37, 37, 37);
+    --black2:rgb(59, 59, 59);
+    --black3:rgb(66, 66, 66);
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*margins bottom*/
+    --mb-0-25:.25rem;
+    --mb-0-5:.5rem;
+    --mb-0-75:.75rem;
+    --mb-1:1rem;
+    --mb-1-5:1.5rem;
+    --mb-2:2rem;
+    --mb-2-5:2.5rem;
+    --mb-3:3rem;
+
+    /*z - indexes*/
+    --z-tooltip:10;
+    --z-fixed:100;
+    --z-modal:1000;
+
+    /*body and fonts*/
+    --body-font: 'Poppins', sans-serif;
+
+}
+
+/* BASE CSS */
+
+*,*::after,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+h1,h2,h3,h4,h5{
+    font-weight: var(--font-semi-bold);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/*REUSABLE CSS CLASSES*/
+.section{
+    padding: 2rem 0 4rem;
+}
+
+.section__title{
+    font-size: var(--h1-font-size);
+}
+
+.section__subtitle{
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-3);
+}
+
+.section__title,
+.section__subtitle{
+    text-align: center;
+}
+
+/* LAYOUT */
+.container{
+    max-width: 768px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    z-index: var(--z-fixed);
+}
+
+/*NAVIGATION*/
+.nav{
+    max-width: 968px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo,.nav__toggle{
+    font-weight: 500;
+}
+
+.nav__toggle{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.nav__list{
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
+.nav__link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+}
+
+.nav__icon{
+    font-size:1.2rem;
+}
+
+#nav-close{
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem ;
+}
+
+
+
+@media all and (max-width: 480px){
+    .nav__menu{
+        position: fixed;
+        bottom: -100%;
+        background: white;
+        left: 0;
+        width: 100%;
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+        border-radius: 1.5rem 1.4rem 0 0;
+        transition: .3s;
+
+    }
+}
+
+.show-menu{
+    bottom: 0;
+}
+
+
+/*desktop*/
+@media all and (min-width: 1024px) and (max-width: 1280px){
+
+    :root{
+        --big-font-size: 3rem;
+        --h1-font-size:2.25rem;
+        --h2-font-size:1.5rem;
+        --h3-font-size:1.25rem;
+        --normal-font-size:1rem;
+        --small-font-size:.875rem;
+        --smalller-font-size:.813rem;
+    }
+
+
+}
+
+
+/*tablet land scape*/
+@media all and (min-width: 768px) and (max-width: 1024px){}
+/*tablet portrait*/
+@media all and (min-width: 480px) and (max-width: 768px){}
+/*mobile / small devices*/
+
+
