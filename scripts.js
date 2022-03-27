@@ -68,3 +68,29 @@ tabs.forEach(tab=>{
     })
 })
 
+//services modal
+const modalViews = document.querySelectorAll('.services__modal'),
+modalBtns = document.querySelectorAll('.services__button'),
+modalCloses = document.querySelectorAll('.services__modal-close');
+
+let modal = function(modalClick){
+    modalViews[modalClick].classList.add('active-modal');
+}
+
+
+modalBtns.forEach((mdBtn,i)=>{
+    mdBtn.addEventListener('click',()=>{
+        modal(i);
+    })
+})
+
+modalCloses.forEach((mdCls)=>{
+    mdCls.addEventListener('click',()=>{
+        modalViews.forEach((mdV)=>{
+            mdV.classList.remove('active-modal');
+        })
+    })
+})
+
+
+
